@@ -1,0 +1,30 @@
+# Runs the audit automatically every Monday, or whenever you click
+# "Run workflow" on the Actions tab. The report is saved as a downloadable file.
+name: Weekly meta tag audit
+
+on:
+  schedule:
+    - cron: "30 3 * * 1"   # Mondays 03:30 UTC (9:00 AM IST)
+  workflow_dispatch:        # adds a "Run workflow" button
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      - name: Run audit
+        run: python audit.py
+
+      - name: Save report
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-report
+          path: report.csv
