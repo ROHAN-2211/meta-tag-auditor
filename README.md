@@ -60,7 +60,7 @@ python audit.py --input my_urls.txt --output my_report.csv
 
 This repo also works as a [Claude skill](https://support.claude.com/en/articles/12512180-use-skills-in-claude). Once it's added, ask Claude something like *"audit these pages for SEO issues"* and Claude runs the audit, explains what's wrong, and suggests rewritten titles and meta descriptions.
 
-1. Download **[meta-tag-auditor-skill.zip](../../releases/latest/download/meta-tag-auditor-skill.zip)**. Upload this file exactly as it is, without unzipping it.
+1. Download **[meta-tag-auditor-skill.zip](../../raw/main/meta-tag-auditor-skill.zip)**. Upload this file exactly as it is, without unzipping it.
 2. In Claude, make sure **Code execution and file creation** is turned on under **Settings → Capabilities**.
 3. Go to **Customize → Skills**, click **+**, then **Create skill → Upload a skill**, and choose the zip.
 4. Switch the skill on, then ask Claude to audit your pages.
