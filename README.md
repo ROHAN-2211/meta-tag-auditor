@@ -4,6 +4,8 @@ A simple, free tool that checks a list of web pages for common on-page SEO probl
 
 Use it instead of opening pages one by one to check titles, descriptions and headings.
 
+**Three ways to use it:** run it on GitHub with no installation, run it on your computer, or add it to Claude as a skill.
+
 ## What it checks
 
 | Check | What gets flagged |
@@ -53,6 +55,19 @@ To use a different list of URLs or report name:
 ```bash
 python audit.py --input my_urls.txt --output my_report.csv
 ```
+
+### Option 3: Use it as a Claude skill
+
+This repo also works as a [Claude skill](https://support.claude.com/en/articles/12512180-use-skills-in-claude). Once it's added, ask Claude something like *"audit these pages for SEO issues"* and Claude runs the audit, explains what's wrong, and suggests rewritten titles and meta descriptions.
+
+1. Download **[meta-tag-auditor-skill.zip](../../releases/latest/download/meta-tag-auditor-skill.zip)**. Upload this file exactly as it is, without unzipping it.
+2. In Claude, make sure **Code execution and file creation** is turned on under **Settings → Capabilities**.
+3. Go to **Customize → Skills**, click **+**, then **Create skill → Upload a skill**, and choose the zip.
+4. Switch the skill on, then ask Claude to audit your pages.
+
+Claude needs web access from code execution to fetch the pages. If every URL comes back as `ERROR`, allow web access in your Claude settings, or use Option 1 instead.
+
+> Use the zip above rather than GitHub's green **Code → Download ZIP** button. That button names the folder `meta-tag-auditor-main`, and Claude needs the folder name to match the skill name.
 
 ## Customising
 
