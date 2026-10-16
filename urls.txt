@@ -1,3 +1,4 @@
 # Put one URL per line. Lines starting with # are ignored.
-https://simplismart.ai/
-https://simplismart.ai/
+# Replace these examples with the pages you want to audit.
+https://example.com
+https://www.wikipedia.org
